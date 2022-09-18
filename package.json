@@ -28,8 +28,8 @@
     "release": "pnpm release:check && pnpm release:version && pnpm release:publish",
     "release:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "release:check": "pnpm lint",
-    "release:publish": "pnpm publish --tag next",
-    "release:version": "bumpp package.json --execute=\"pnpm release:changelog && git add .\" --commit --all"
+    "release:publish": "pnpm publish --tag latest",
+    "release:version": "bumpp package.json --execute=\"pnpm release:changelog\" --commit --all"
   },
   "lint-staged": {
     "*.{md,json,js}": [
@@ -48,7 +48,7 @@
     }
   },
   "dependencies": {
-    "@waline/vercel": "^1.19.3",
+    "@waline/vercel": "^1.21.0",
     "colors": "^1.4.0",
     "commander": "^9.4.0",
     "cross-spawn": "^7.0.3",
