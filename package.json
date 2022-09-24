@@ -21,6 +21,7 @@
     "lib"
   ],
   "scripts": {
+    "postinstall": "node ./lib/install-waline.js",
     "lint": "pnpm lint:prettier && pnpm lint:eslint",
     "lint:eslint": "eslint --ext .js,.ts --fix .",
     "lint:prettier": "prettier --check --write .",
@@ -48,7 +49,7 @@
     }
   },
   "dependencies": {
-    "@waline/vercel": "^1.21.0",
+    "axios": "^0.27.2",
     "colors": "^1.4.0",
     "commander": "^9.4.0",
     "cross-spawn": "^7.0.3",
@@ -56,11 +57,15 @@
     "import-local": "^3.1.0",
     "inquirer": "^8.0.0",
     "mysql": "^2.18.1",
+    "npminstall": "^6.5.1",
     "npmlog": "^6.0.2",
     "path-exists": "^5.0.0",
+    "pkg-dir": "^7.0.0",
     "pm2": "^5.2.0",
     "root-check": "^2.0.0",
-    "shelljs": "^0.8.5"
+    "semver": "^7.3.7",
+    "shelljs": "^0.8.5",
+    "url-join": "^5.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
