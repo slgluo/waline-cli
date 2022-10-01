@@ -36,7 +36,34 @@ waline restart
 waline status
 ```
 
-### 3. 查看 waline 服务实时日志
+### 3. waline 服务开机自启动
+
+```bash
+# 启动服务，并设置为开机自启动（不支持windows）
+waline start --startup
+
+# 设置开机自启动（在自动服务后执行）
+waline startup
+# 移除开机自启动（仅移除pm2应用列表中的waline应用，如果使用pm2管理其他应用时会很有用）
+waline unstartup
+# 移除开机自启动（移除pm2 service自启动服务，如果使用pm2管理其他应用时，其他应用的自启动也会失效）
+waline unstartup --remove-service
+```
+
+### 4. @waline/vercel 更新
+
+```bash
+# 查看当前使用@wline/vercel版本
+waline vercel
+waline vercel -V
+
+# 更新@waline/vercel版本
+waline vercel update
+```
+
+`@waline/vercel` 安装在 `用户目录/.waline/node_modules` 中
+
+### 5. 查看 waline 服务实时日志
 
 ```bash
 waline log
